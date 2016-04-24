@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caches>
+
+	<quartz>
+		<!--线程池-->
+		<property name="org.quartz.threadPool.class"
+			value="org.quartz.simpl.SimpleThreadPool" />
+		<property name="org.quartz.threadPool.threadCount" value="3" />
+		<property name="org.quartz.threadPool.threadPriority" value="5" />
+		<property name="org.quartz.threadPool.makeThreadsDaemons"
+			value="true" />
+
+		<!--scheduler-->
+		<property name="org.quartz.scheduler.instanceName"
+			value="CacheScheduler" />
+		<property name="org.quartz.scheduler.makeSchedulerThreadDaemon"
+			value="true" />
+
+		<!--JobStore-->
+		<property name="org.quartz.jobStore.misfireThreshold"
+			value="60000" />
+		<property name="org.quartz.jobStore.class"
+			value="org.quartz.simpl.RAMJobStore" />
+	</quartz>
+
+	<!--默认都是需要init的-->
+
+	<cache id="com.aling.hscache.sample.HscahceSample" init="true">
+		<!-- <property name="cronExpression" value="0 0 0/20 * * ?" /> -->
+	</cache>
+
+</caches>
